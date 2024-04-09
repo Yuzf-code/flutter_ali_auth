@@ -272,26 +272,26 @@ extension AuthUIBuilder {
 
         model.privacyFont = UIFont(name: PF_Regular, size: CGFloat(config.privacyFontSize ?? Font_14))!
 
-        model.privacyFrameBlock = { screenSize, _, _ -> CGRect in
-            if kHorizontal == nil {
-                kHorizontal = self.isHorizontal(screenSize)
-            }
-
-            let screenHeight = Float(screenSize.height)
-
-            var offsetY: CGFloat
-
-            if kHorizontal! {
-                // (18.0, 715.5, 370.0, 39.5)
-                offsetY = CGFloat(config.privacyFrameOffsetY ?? screenHeight - kPadding - kBottomInset)
-            } else {
-                offsetY = CGFloat(config.privacyFrameOffsetY ?? screenHeight - kPadding - 80)
-            }
-
-            let offsetX = CGFloat(screenSize.width / 2 - 148)
-
-            return CGRect(x: offsetX, y: offsetY, width: 296, height: 48)
-        }
+//         model.privacyFrameBlock = { screenSize, _, _ -> CGRect in
+//             if kHorizontal == nil {
+//                 kHorizontal = self.isHorizontal(screenSize)
+//             }
+//
+//             let screenHeight = Float(screenSize.height)
+//
+//             var offsetY: CGFloat
+//
+//             if kHorizontal! {
+//                 // (18.0, 715.5, 370.0, 39.5)
+//                 offsetY = CGFloat(config.privacyFrameOffsetY ?? screenHeight - kPadding - kBottomInset)
+//             } else {
+//                 offsetY = CGFloat(config.privacyFrameOffsetY ?? screenHeight - kPadding - 80)
+//             }
+//
+//             let offsetX = CGFloat(screenSize.width / 2 - 148)
+//
+//             return CGRect(x: offsetX, y: offsetY, width: 296, height: 48)
+//         }
 
         if let privacyNavBackIcon = BundleImage("icon_nav_back_gray") {
             model.privacyNavBackImage = privacyNavBackIcon
